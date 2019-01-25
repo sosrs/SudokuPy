@@ -1,4 +1,4 @@
-# Write a Sodoku valid move checker (https://en.wikipedia.org/wiki/Sudoku)
+# Write a Sudoku valid move checker (https://en.wikipedia.org/wiki/Sudoku)
 
 # This checker should be able to be given the current board state 
 #    and a potential move and return a boolean of whether the move is valid
@@ -43,10 +43,10 @@ class SudokuBox:
         #returns the box as a list
         return self.box
     
-    def make_play(self, number, x, y)->None:
+    def make_play(self, number, x:int, y:int)->None:
         #enters the number given into coordinates x,y
-        if number not in range(0,10):
-            print('Only numbers from 0-9 allowed in this box!')
+        if number not in range(1,10):
+            print('Only numbers from 1-9 allowed in this box!')
         elif self.check_box(number):
             print('That number is already in that box')
         elif x in range(1,4) and y in range(1,4):
@@ -120,8 +120,8 @@ class SudokuBoard:
 
 
 
-        if number not in range(0,10):
-            print('Only numbers from 0-9 allowed on the board!')
+        if number not in range(1,10):
+            print('Only numbers from 1-9 allowed on the board!')
         elif [x,y] in self.puzzleSets:
             print("That number is given, and can't be changed")
 
