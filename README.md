@@ -19,8 +19,6 @@ V 0.2
 
 Large update!
 
-Created an erase play method in both SudokuBox and SudokuBoard
-
 Finalized print_board so it has a display you can actually play sudoku off
 
 Finished check_col function, allowing the engine to check if a number is already in the column, meaning...
