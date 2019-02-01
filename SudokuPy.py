@@ -9,6 +9,7 @@
 
 # Assuming rows (y) is 1-9, from top to bottom
 # Assuming cols (x) is 1-9, from left to right
+# this is a test to see if i can push commits.
 
 current_board_state = []
 
