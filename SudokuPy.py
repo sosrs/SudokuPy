@@ -128,8 +128,6 @@ class SudokuBoard:
     def make_play(self,number, x, y):
         #enters the number given into coordinates x,y on the board
 
-
-
         if number not in range(1,10):
             print('Only numbers from 1-9 allowed on the board!')
         elif [x,y] in self.puzzleSets:
