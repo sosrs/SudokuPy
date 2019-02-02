@@ -44,14 +44,14 @@ class SudokuBox:
         #returns the box as a list
         return self.box
     
-    def make_play(self, number, x:int, y:int)->None:
+    def make_play(self, number:int, x:int, y:int)->None:
         #enters the number given into coordinates x,y
         if number not in range(1,10):
             print('Only numbers from 1-9 allowed in this box!')
         elif self.check_box(number):
             print('That number is already in that box')
         elif x in range(1,4) and y in range(1,4):
-            self.box[y-1][x-1]=number
+            self.box[y-1][x-1] = number
         else:
             print('Your coordinates are not allowed in this box.')
             #not allowed to have an x or y >3
@@ -74,7 +74,7 @@ class SudokuBox:
     def check_col(self,number,x):
         #check if a number is in a given column of this box
         for i in self.box:
-            if i[x-1]==number:
+            if i[x-1] == number:
                 return True
         return False
         
@@ -116,6 +116,15 @@ class SudokuBoard:
                 print(rowtoprint)
             print(25*'-')
     
+    def load_puzzle(self, inputFile)->None:
+        # inputfile will be a list of 'number, x, y' entries
+        # for each item, make that play, then add [x,y] to a list
+        # at the end, load list into puzzleSets
+        # if a play is illegal, erase every play before that from the board
+        # now puzzleSets hasn't been loaded with data
+        # print success or failure
+        pass
+
     def make_play(self,number, x, y):
         #enters the number given into coordinates x,y on the board
 
@@ -197,8 +206,8 @@ class SudokuBoard:
         return False'''
     
     def check_col(self,number,x)->bool:
-        #checks if the given number is already in a given column across the entire board
-        #True means the number is present
+        # checks if the given number is already in a given column across the entire board
+        # True means the number is present
         check=False
         if x in range(1,4):
             for line in self.board:
